@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        #app{
+            width:450px;
+            background: #fff;
+            margin:50px auto;
+            border: 2px solid #000;
+        }
+        li{
+            list-style: none;
+            background: #ccc;
+            height: 50px;
+            line-height:50px;
+            margin-bottom: 10px;
+        }
+        li input{
+            margin-left: 5%;
+        }
+        li>span{
+            float:right;
+            margin-right: 5%;
+        }
+        .selected{
+            background: pink;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <h1>todolist</h1>
+        <hr>
+        <label for="name">名称</label>
+        <input type="text" id = "name" placeholder="请输入产品名" v-model="name">
+    </br>
+        <label for="price">价格</label>
+        <input type="text" placeholder="请输入产品价格" v-model="price">
+        <button @click="add()">添加</button>
+    </br>
+        <input type="text" placeholder="请输入搜索内容" v-model="seaVal ">
+        <button @click="search()">搜索</button>
+        <!-- 但凡用到search()等不改变原数组，又要求显示不同的时候一定要有一个showList -->
+        <ul>
+            <li v-for="(obj,index) in showList" @click = "change(obj)" :class = "{selected:obj.isSelect}">
+                <input type="checkbox" v-model = "obj.isSelect">{{obj.name}}
+                <span>
+                    {{obj.price}}
+                    <span style="color:red;">[X]</span>
+                </span>            
+            </li>
+        </ul>
+        <button @click = "del()">删除选中</button>
+        <!-- 自定义事件的响应函数的时候，函数名不能定义为delete -->
+        <br>
+        <span>总价：{{sum}}</span>
+    </div>
+</body>
+<script src = "vue.js"></script>
+<script>
+    Array.prototype.indexOf = function(val){
+        for(var i = 0;i<this.length;i++){
+            if(this[i] == val) return i;
+        }
+        return -1;
+    }
+
+    Array.prototype.remove = function(val){
+        var index = this.indexOf(val);
+        if(index > -1)
+        this.splice(index,1);
+    }
+
+    var vm = new Vue({
+        el:"#app",
+        data:{
+            proList:[
+                {
+                    name:"裤子",
+                    price:11,
+                    // 对于两种状态的数据，比如勾选和非勾选数据必须用到标号
+                    isSelect:false
+                },
+                {
+                    name:"衣服",
+                    price:22,
+                    isSelect:false
+                },
+                {
+                    name:"电脑",
+                    price:3333,
+                    isSelect:false
+                },
+                {
+                    name:"iphoneX",
+                    price:5555,
+                    isSelect:false
+                }
+            ],
+            showList:[
+            {
+                    name:"裤子",
+                    price:11,
+                    // 对于两种状态的数据，比如勾选和非勾选数据必须用到标号
+                    isSelect:false
+                },
+                {
+                    name:"衣服",
+                    price:22,
+                    isSelect:false
+                },
+                {
+                    name:"电脑",
+                    price:3333,
+                    isSelect:false
+                },
+                {
+                    name:"iphoneX",
+                    price:5555,
+                    isSelect:false
+                }
+
+            ],
+            name:"",
+            price:"",
+            seaVal:""
+        },
+        computed:{
+                sum:function(){
+
+                    // 
+                    var sum1 = 0; 
+                    this.proList.forEach((obj,index)=>{
+                        console.log(obj);
+                        if(!obj.isSelect) sum1 += obj.price;
+                    })
+                    // sum1 += 212;
+                    return sum1;
+                },
+               
+            },
+        methods: {
+            add(){
+                this.proList.push({
+                    name:this.name,
+                    price:this.price,
+                    isSelect:false
+                });
+                this.showList = [...this.proList];
+                // console.log(this.sum);
+                // 这里显示只要一添加操作，原来的数据就会被返回
+                this.name = "";
+                this.price = "";
+            },
+            search(){
+                var arr = this.proList.filter((obj,index)=>{
+                    return obj.name.includes(this.seaVal);
+                });
+                this.showList = [...arr];
+            },
+            change(obj){
+                obj.isSelect = !obj.isSelect;
+                this.showList = [...this.showList];
+                console.log(this.sum);
+            },
+            del(){
+                // 将某些东西过滤出来形成一个新的数组
+                    var result = this.proList.filter(function(obj){
+                        return obj.isSelect == false;
+                        // return !obj.isSelect;
+                    });
+                    // 显示
+                    this.proList = [...result];
+                    this.showList = [...result];
+               
+            }
+        },
+    })
+</script>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        // var a;
+        // console.log(a);  //undefined
+        // var a = 10;
+        // console.log(b); // b is not defined
+        // let b = 20;
+        // let b = 30;
+
+        // es5 全局作用域  函数作用域 
+        //var只存在全局和函数
+
+        // function fn(){
+        //     var x = 10;
+        // }
+
+        // {
+        //     let y = 20;
+        // }
+        // 
+        // let 声明的变量在当前下不允许同名的变量进来
+        // 暂时性死区
+        // let c = 10;
+        // function fn2(){
+
+        //     console.log(c);
+        //     let c = 30;
+        //     // console.log(c);
+        // }
+        // fn2();
+
+        // const a = 50;
+        // a = 60;
+
+        const obj = {
+            name:'zs',
+            age:20
+        }
+ 
+        Object.freeze(obj);   //此时冻结了这个对象，属性值也改不了
+    
+        obj.name = 'lisi';
+
+        console.log(obj);
+
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     
+
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+    
+</body>
+</html>

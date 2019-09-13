@@ -1,0 +1,52 @@
+  
+html:  html语义化 哪些块级元素  哪些行级元素  区别 
+
+1、html的语义化
+        1，有关HTML的语义化，你的理解：html中自带了一些标签，这些标签有特定含义，比如H1-H6代表标题、p代表段落、img代表图片、html5里也推出了一些新的标签：header、footer、nav这些标签都有特定的含义，使用的时候应该尽量按照它的语义来使用
+        好处：
+        1.别人阅读你的代码的时候能够根据标签才出来你的用意，有利于程序员阅读，便于团队开发和维护
+        2.浏览器读取方便
+        3.有利于搜索引擎优化（SEO：Search Engine Optimization）（比如说会根据标签来搜索，可能重点会搜索h1）
+        4.有一些标签默认会有一些样式，如果浏览器禁止了CSS样式还可以达到突出样式的效果，比如h1
+
+css:  常见css选择器， 权重值 ， position、display区别 ，
+
+bfc ，清除浮动 ，外边距合并 ，
+
+重排 重绘 
+1.重绘就是在一个元素的外观被改变，但没有改变布局（宽高）的情况下发生，
+如改变visibility、outline、背景色等等。
+2.重排就是DOM的变化影响到了元素的几何属性（宽和高），
+浏览器会重新计算元素的几何属性,如：改变窗囗大小、改变文字大小、
+内容的改变、浏览器窗口变化，style属性的改变等等。
+3.reflow（回流）：当浏览器发现某个部分发生了点变化影响了布局，
+需要倒回去重新渲染，内行称这个回退的过程叫 reflow
+
+
+
+Js：js数据类型，类，原型（prototype __proto__  constructor），继承 ，this指向，call和apply bind区别 ，事件相关(冒泡 捕获) ，事件委托 ，闭包 ，函数节流和去抖,  ajax原理（get post区别）， 跨域  ，
+
+函数节流：一个函数执行一次后，只有大于设定的执行周期后才执行第二次
+    有个需要频繁触发的函数 出于优化性能角度，在规定时间内，只让函数触发第一次生效，后面不生效
+函数防抖：一个需要频繁触发的函数，在规定时间内只让最后一次生效，前面的不生效
+debounce()
+
+ajax原理（get post区别）， 跨域  ，
+
+Jq: jq的源代码
+
+Css3:  动画、盒模型（标准、ie怪异盒模型） 弹性盒模型  ，元素布局问题(水平垂直都居中，左侧固定右侧自适应)
+
+Html5: h5新特性 ，常见的html5标签 ， sessionStorage  和  localStorage cookie区别 
+
+性能优化 ，事件循环(event loop)  同步异步   
+
+移动端兼容性问题 ，响应式设计实现方式,  px  em  rem区别 ， rem原理
+
+es6:  es6新特性、 let和var const区别 ， 箭头函数（箭头函数this指向），解构， promise ，genrator  async  await
+
+vue: 常用指令 生命周期  父子组件传值  vuex  computed和方法 watch区别  双向数据绑定 虚拟dom diff
+
+react: 组件定义、组件传值、生命周期、state、props、refs、 redux 虚拟dom、diff
+、
+前端安全(XSS CSRF攻击)  模块化： CommonJS  es6模块化   AMD CMD区别（等讲完node 录视频发给大家）

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body> 
+    <ul>
+        <li>1111</li>
+        <li>222</li>
+        <li>3333</li>
+    </ul>   
+    <script>
+        var aLi = document.getElementsByTagName('li');
+        // for(var i=0; i<aLi.length; i++){
+
+            //给每一个li的点击事件绑定事件处理函数
+            //绑定事件的时候是不会执行事件处理函数的，也就是说变量还是变量
+            //不会被赋值使用    
+            //只有函数被调用的时候函数中的变量和参数才会被赋予值上
+            //利用闭包则外面函数中定义的变量和参数不会被释放
+
+        //     (function(i){
+                //外面函数中定义的变量和参数的值不会被释放
+                //(不会被覆盖，将永久保存在内存当中)
+                // i是外部函数中的参数 
+        //         aLi[i].onclick = function(){
+        //             console.log(i);
+        //         }
+        //     })(i);
+        // }
+
+        // 块级作用域：{}表示
+        //调用上一级作用域中的参数或者变量，则上一级作用域中的参数或者变量不会被释放
+        //var 只有两种作用域：全局作用域和函数作用域
+        //let 变量有三种作用域，全局作用域、函数作用域和块级作用域
+        //所以一个let 变量的for循环相当于，一个var变量的外部嵌套（闭包）
+        // for(let i=0; i<aLi.length; i++){
+        //     aLi[i].onclick = function(){
+        //         console.log(i);
+        //     }
+        // }
+
+        // aLi.map(function(ele,index){
+        //     ele.onclick = function(){
+        //         console.log(index);
+        //     }
+        // })
+
+        
+
+
+
+
+
+
+
+
+
+
+    </script>
+    
+</body>
+</html>

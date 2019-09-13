@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #div1{
+            width: 200px;
+            height: 200px;
+            background: #ff0000;
+        }
+        #div2{
+            width: 100px;
+            height: 100px;
+            background: #0000ff;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1">
+        div1
+        <div id="div2">
+            div2
+        </div>
+    </div>
+
+    <!-- 
+        事件 事件处理函数  事件源 
+
+     -->
+     <script>
+        var oDiv = document.getElementById('div1');
+        oDiv.onclick = function(e){
+            console.log('dfghjk');
+            // 事件源 
+            console.log(e.target);
+            // this 对当前对象引用 
+            console.log(this);
+        }
+
+        
+    //document.write();          //覆盖页面内容，触发事件的标签不会被覆盖掉
+
+        //e表示事件  e.target表示事件源
+
+
+
+
+     </script>
+
+    
+
+
+    
+</body>
+</html>

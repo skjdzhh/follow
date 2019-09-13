@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!--     
+        js数据类型
+            基本  string number boolean null undefined symbol
+            引用  array object
+
+        typeof "123"  => "string"
+        typdof 123    => "number"
+        typeof true   => "boolean"
+        typeof null   => "object"
+        typeof undefined  => "undefined"
+        typeof [1,2,3]   => "object"
+        typeof {name:'zs'}   => "object"
+        typeof 函数 => "function"
+
+
+        2. 判断数组和对象 
+            Array.isArray
+            instanceof
+            constructor
+
+     -->    
+     <script>
+        //  function aa() {
+        //      console.log('sdfghjkl')
+        //  }
+
+        //  console.log( typeof aa);
+        var a = [1,2,3];
+        var b = {
+            name:'zs'
+        }
+        // console.log( Array.isArray(b))
+
+        console.log(b instanceof Array);
+        console.log(b instanceof Object);
+
+        console.log(a.constructor == Array);
+        console.log(b.constructor == Object);
+
+
+
+
+
+
+
+    
+        
+
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     </script>
+
+</body>
+</html>

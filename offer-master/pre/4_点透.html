@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- 
+        原因:zepto的tap事件是通过兼听绑定在document上的touch事件来完
+        成tap事件的模拟的，并且tap事件是冒泡到document上触发的！！！
+        而在冒泡到document之前，用户手的接触屏幕(touchstart)和离开屏幕(touchend)
+        是会触发click事件的,因为click事件有延迟触发(这就是为什么移动端不用click而用tap的原因)
+        (大概是300ms,为了实现safari的双击事件的设计)，所以在执行完tap事件之后，
+        弹出来的选择组件马上就隐藏了，此时click事件还在延迟的300ms之中，
+        当300ms到来的时候，click到的其实不是完成而是隐藏之后的下方的元素，
+        如果正下方的元素绑定的有click事件此时便会触发，
+
+
+        1\touchstart代替click。亦即click的触发是有延迟的，这个时间大概在300ms左右。
+        .on('touchstart',function(){
+            e.preventDefault();
+        })
+        2\引入fastclick.js，因为fastclick源码不依赖其他库所以你可以在原生的js前直接加上
+        FastClick.attach(document.body);
+        3\用touchend代替tap事件并阻止掉touchend的默认行为preventDefault()
+        4\延迟一定的时间(300ms+)来处理事件 
+
+        原生事件：
+            click 有300ms延迟
+            touch 
+        zepto封装的事件：
+            tap zepto封装的点击事件  
+            swipeLeft 左滑
+            swipeRight 右滑
+        
+        1px边框 在手机上border无法达到我们想要的效果。这是因为devicePixelRatio特性导致，
+        iphone的devicePixelRatio==2，而border-width: 1px描述的是设备独立像素，
+        所以，border被放大到物理像素2px显示，在iPhone上就显得较粗。
+
+        1、通过背景图片实现
+
+        2、通过transform: scale(0.5)实现
+        把border给了元素的before或者after等伪类，然后让伪类利用css3的transform的scaleY(0.5)缩放0.5像素，这样，就能实现了。
+
+        
+    -->
+    
+</body>
+</html>

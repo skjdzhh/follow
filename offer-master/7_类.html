@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!--     
+        类：具有相同的属性和方法的集合 
+        声明类 属性写在构造函数中
+                  方法写在原型下
+     -->    
+    <script>
+
+        // var p1 = {
+        //     name:'zs',
+        //     age:20,
+        //     say:function(){
+        //         console.log('哈哈')
+        //     }
+        // }
+        // 构造函数
+        function Person(name,age){
+            this.name = name,
+            this.age = age
+            // this.say = function(){
+            //     console.log( this.name +"Hehe");
+            // }
+        }
+        // 原型  prototype  
+        /*
+        prototype  
+            函数有一个prototype属性，这个属性是一个指针 指向他的原型对象
+            原型对象下的属性和方法  可以被实例化对象所共享 
+            原型下有一个constructor 属性指向他的构造函数
+            
+        __proto__ 
+
+        原型链：
+        当从一个对象那里调取属性或方法时，如果该对象自身不存在这样的属性或方法，
+        就会去自己关联的prototype对象那里寻找，如果prototype没有，
+        就会去prototype关联的前辈prototype那里寻找，
+        如果再没有则继续查找Prototype.Prototype引用的对象，依次类推，
+        直到Prototype.….Prototype为undefined（Object的Prototype就是undefined）
+        从而形成了所谓的“原型链”。
+        */
+        Person.prototype.sex = "女";
+        Person.prototype.say = function(){
+            console.log(this.name +"hahahah")
+        }
+
+        var p1 = new Person("zs",20);
+        console.log(p1.sex);
+        p1.say();
+        
+        var p2 = new Person("lisi",30);
+        console.log(p2.sex);
+        p2.say();
+
+        
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+        
+
+
+    </script>
+
+</body>
+</html>

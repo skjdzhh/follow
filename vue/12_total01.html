@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <div>
+            是否需要额外付费设施
+            <input type="checkbox" v-model="isCheck" >
+            <ul v-show="isCheck">
+                <li v-for="(obj,index) in payList">
+                    {{obj.name}}({{obj.price}})
+                    <input type="checkbox" v-model="obj.isCheck" @click="refresh(index)">
+                    <!-- 当给checkbox同时绑定v-model(checked)属性和点击函数的时候
+                    首先执行函数，如果函数需要用v-model 的结果，那么v-model的值一定是之前的值
+                    -->
+                </li>
+            </ul>
+            <!-- 默认点击：checked=true / checked="checked" -->
+            <!-- checkbox当中v-model属性相当于checked属性 -->
+        </div>
+        <div>
+            订单费用信息
+            <ul>
+                <li v-for="(obj,index) in orderList">
+                    {{obj.name}}({{obj.price}})
+                </li>
+            </ul>
+        </div>
+
+    </div>
+</body>
+<script src="vue.js"></script>
+<script>
+    Array.prototype.indexOf = function(val) { 
+    for (var i = 0; i < this.length; i++) {  
+     //原型对象下的this指的是实例化下的对象 
+    if (this[i] == val) return i; 
+    } 
+    return -1; 
+    };
+
+    Array.prototype.remove = function(val) { 
+    var index = this.indexOf(val); 
+    if (index > -1) { 
+    this.splice(index, 1); 
+    } 
+    };
+
+    var vm = new Vue({
+        el:"#app",
+        data:{
+            isCheck:false,
+            payList:[
+                {
+                    name:"沙发",
+                    price:12,
+                    isCheck:false
+                },
+                {
+                    name:"wifi",
+                    price:12,
+                    isCheck:false
+                },
+                {
+                    name:"电脑",
+                    price:12,
+                    isCheck:false
+                }
+            ],
+            orderList:[
+            {
+                name:"群力花园豪华型",
+                price:400
+            }
+            ]
+        },
+       
+        methods:{
+            refresh(index){
+                // console.log(this.orderList);
+                // this.payList.forEach(obj=>{
+                    // console.log(obj.isCheck);
+                    // if(obj.isCheck) 
+                    // {
+                        if(!this.payList[index].isCheck){
+                            this.orderList.push(this.payList[index]);
+                            console.log(this.orderList);
+                        }
+                        else{
+                            this.orderList.remove(this.payList[index]);
+                        }
+                        // console.log(obj);
+                    // }
+                    // console.log(index);
+                // })
+                // console.log(this.orderList);
+            }
+        }
+    })
+
+   
+</script>
+</html>

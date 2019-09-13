@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        li{
+            background: #ff0000;
+        }
+    </style>
+</head>
+<body>
+    <button id="btn">click</button>
+    <ul id="ul1">
+        <li>11111</li>
+        <li>22222</li>
+        <li>33333</li>
+    </ul>
+    <script>
+        // 后生成元素的事件绑定问题 
+
+        var aLi = document.getElementsByTagName('li');
+        var oBtn = document.getElementById('btn');
+        var oUl = document.getElementById('ul1');
+        // for(var i=0; i<aLi.length; i++){
+        //     aLi[i].onclick = function(){
+        //         console.log(this.innerHTML);
+        //     }
+        // }
+
+        oBtn.onclick = function(){
+            var oLi = document.createElement('li');
+            oLi.innerHTML = Math.random();
+            oUl.appendChild(oLi);
+        }
+
+        // 讲事件绑定已存在的父元素上，当点击子元素的时候，通过事件冒泡 ，事件会冒泡到父元素身上
+        oUl.onclick = function(e){
+            // console.log(e.target.tagName)
+            if(e.target.tagName == "LI"){
+                console.log(e.target.innerHTML);
+            }
+        }
+
+        //DOM 2级事件 可以给一个事件绑定多个事件处理函数
+        //DOM 0级事件绑定多个事件处理函数的时候，直接执行第二个，而忽略第一个
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+</body>
+</html>
