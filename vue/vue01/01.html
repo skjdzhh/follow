@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head id="root">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{{msg}}</title>
+</head>
+
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <div id="root">
+        <button v-on:click="reverse"></button>
+    </div>
+    <script>
+        var vm = new Vue({
+            el: "#root",
+            data: {
+                // msg: new Date().toLocaleString()
+                msg: "hello world"
+            },
+            methods: {
+                reverse: function () {
+                    this.msg = this.msg.split
+                }
+            },
+        })
+        /*
+         把数据绑定到dom文本    <div>{{msg}}</div>
+         把数据绑定到dom属性      <di v-bind:title="msg"v></div>
+         把数据绑定到dom结构    <di v-if:title="msg"v></div>
+         v-for循环,使用数据添加一个dom元素
+         v-on添加事件监听器
+         arr.reverse()         //数组翻转   改变原数组
+         arr.join(' ')         //数组连接成字符串
+         radio checkbox select上和value相同就选中
+         在 Vue 里，一个组件本质上是一个拥有预定义选项的一个 Vue 实例
+
+         <todo-item v-bind:todo="msg"></todo-item>
+         {
+             template:"<p>{{todo.text}}</p>",
+             props:['todo']
+         }
+
+         所有的 Vue 组件都是 Vue 实例，并且接受相同的选项对象 (一些根实例特有的选项除外)。
+         当一个 Vue 实例被创建时，它将 data 对象中的所有的属性加入到 Vue 的响应式系统中。
+         当实例被创建时就已经存在于 data 中的属性才是响应式的。
+         这里唯一的例外是使用 Object.freeze()，这会阻止修改现有的属性，也意味着响应系统无法再追踪变化。
+         Object.freeze()  Object.freeze()
+
+         数据属性、实例属性和方法
+         vm.$data
+         vm.$el
+         vm.$watch('a',function(newValue,oldValue){
+         })      //方法
+
+         实例生命周期函数被创建之后执行
+         不要在选项属性或回调上使用箭头函数
+         created  //一个实例b
+         
+             */
+    </script>
+</body>
+
+</html>
