@@ -34,7 +34,7 @@
 
         // let n = p1.name;
         // let age = p1.age;
-        // let { age, name:n } = p1;
+        // let { age, name:n } = p1;  
         // console.log(n, age);
 
         // let str = "hij";
@@ -68,50 +68,37 @@
 
         // [a,b] = [b,a];
 
-        
+
 
         let obj = {
-            name:'zs',
-            age:20
+            name: 'zs',
+            age: 20
         }
 
-        let {name,age} = obj;
+        let {
+            name,
+            age
+        } = obj;
 
-        console.log(name,age);
+        console.log(name, age);
 
-        let [a,b] = [1,2];
+        let [a, b] = [1, 2];
 
-        function a({name,age}){
+        function a({
+            name,
+            age
+        }) {
             // obj.name
             // obj.age
 
-            console.log(name,age)
+            console.log(name, age)
 
         }
 
-        a({name:'zs',age:20});
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        a({
+            name: 'zs',
+            age: 20
+        });
     </script>
 
 </body>

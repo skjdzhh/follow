@@ -1,31 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
-<body> 
+
+<body>
     <ul>
         <li>1111</li>
         <li>222</li>
         <li>3333</li>
-    </ul>   
+    </ul>
     <script>
         var aLi = document.getElementsByTagName('li');
         // for(var i=0; i<aLi.length; i++){
 
-            //给每一个li的点击事件绑定事件处理函数
-            //绑定事件的时候是不会执行事件处理函数的，也就是说变量还是变量
-            //不会被赋值使用    
-            //只有函数被调用的时候函数中的变量和参数才会被赋予值上
-            //利用闭包则外面函数中定义的变量和参数不会被释放
+        //给每一个li的点击事件绑定事件处理函数
+        //绑定事件的时候是不会执行事件处理函数的，也就是说变量还是变量
+        //不会被赋值使用    
+        //只有函数被调用的时候函数中的变量和参数才会被赋予值上
+        //利用闭包则外面函数中定义的变量和参数不会被释放
 
         //     (function(i){
-                //外面函数中定义的变量和参数的值不会被释放
-                //(不会被覆盖，将永久保存在内存当中)
-                // i是外部函数中的参数 
+        //外面函数中定义的变量和参数的值不会被释放
+        //(不会被覆盖，将永久保存在内存当中)
+        // i是外部函数中的参数 
         //         aLi[i].onclick = function(){
         //             console.log(i);
         //         }
@@ -49,18 +51,20 @@
         //     }
         // })
 
-        
+        //map的是使用
+        /*
 
+  var arr = [10,20,30]
+  var result = arr.map(function (item,index,array) {
+    console.log(array[index])
+    return item+10
+  })
+  console.log(result)
 
-
-
-
-
-
-
-
-
+map()方法是不会改变原来的数组，也就是例子中的arr，数据处理之后会返回一个新的数组result，这两者之间没有指向关系
+*/
     </script>
-    
+
 </body>
+
 </html>

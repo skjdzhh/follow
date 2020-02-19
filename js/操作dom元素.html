@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="p1">this is a p target</p>
+</body>
+<script>
+    // 定时器的后面不用加()
+    // 一个定时器
+    setTimeout(() => {
+        var oP1 = document.getElementById("p1");
+        oP1.innerHTML = "p的内容已经修改";
+
+    }, 5000);
+    a = 5;
+    b = 6;
+    c = a + b;
+    console.log(c);
+</script>
+
+</html>
