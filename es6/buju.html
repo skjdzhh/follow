@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>左右定宽，中间自适应（example）</title>
+    <style>
+        .box {
+            overflow: hidden;
+            height: 100px;
+            margin: 10px 0;
+        }
+        
+        .box>div {
+            height: 100%;
+        }
+        
+        .left3 {
+            float: left;
+            width: 100px;
+            background: yellow;
+        }
+        
+        .right3 {
+            float: right;
+            width: 100px;
+            background: yellow;
+        }
+        
+        .main3 {
+            background: #09c;
+            margin: 0 100px 0 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box" id="box3">
+        <div class="left3">左侧定宽</div>
+        <div class="right3">右侧定宽</div>
+        <div class="main3">中间自适应</div>
+    </div>
+
+</body>
+
+</html>

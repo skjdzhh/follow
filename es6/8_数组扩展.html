@@ -32,6 +32,7 @@
         var arr = ['a', 'b', 'c', 'd', 'e', 'f', 'g'];
         // console.log( arr);
         // console.log( arr.copyWithin(0,2,6) );
+
         // 返回第一个符合条件的成员
         /*
         var result = arr.find(function(val,index){
@@ -54,9 +55,11 @@
         //没有返回值，只是针对每个元素调用函数
         arr.forEach(function(val, index) {
 
-                console.log(val, index)
-            })
-            //返回原数组处理过的新数组
+            console.log(val, index)
+        })
+
+
+        //返回原数组处理过的新数组        
         var result = arr.map(function(val, index) {
             // return val+"xx";
             // if(index>3){
@@ -66,26 +69,27 @@
             // }
             return val * 2;
         });
+
         console.log(result);
         var arr1 = [{
-                name: 'zs',
-                age: 10
-            }, {
-                name: 'ls',
-                age: 20
-            }, {
-                name: 'ww',
-                age: 15
-            }, {
-                name: 'xx',
-                age: 30
-            }]
-            // var result1 = arr.filter(function(val,index){
-            //     return index>1;
-            // })
-            // console.log(arr);
-            // console.log(result1);
+            name: 'zs',
+            age: 10
+        }, {
+            name: 'ls',
+            age: 20
+        }, {
+            name: 'ww',
+            age: 15
+        }, {
+            name: 'xx',
+            age: 30
+        }]
 
+        // var result1 = arr.filter(function(val,index){
+        //     return index>1;
+        // })
+        // console.log(arr);
+        // console.log(result1);
         //返回过滤出的符合条件的新数组
         var result2 = arr1.filter(function(obj, index) {
             return obj.age > 18;

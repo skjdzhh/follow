@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>左右定宽，中间自适应（position:absolute;）</title>
+    <style>
+        body {
+            position: relative;
+        }
+        
+        #div1 {
+            height: 200px;
+            width: 200px;
+            background: #ff0000;
+            position: absolute;
+            left: 0;
+            top: 0;
+            /* float: left; */
+        }
+        
+        #div2 {
+            height: 200px;
+            width: 200px;
+            background: #ff0;
+            position: absolute;
+            right: 0;
+            top: 0;
+            /* float: right; */
+        }
+        
+        #div3 {
+            height: 200px;
+            /* width: 200px; */
+            background: #0f0;
+            /* float: right; */
+            margin: 0 200px;
+        }
+    </style>
+</head>
+
+<!-- 写dom的结构的时候先写浮动元素 -->
+
+<body>
+    <div id="div1">左边</div>
+    <div id="div2">右边</div>
+    <div id="div3">中间</div>
+</body>
+
+</html>

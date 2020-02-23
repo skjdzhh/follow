@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>左右定宽，中间自适应（弹性盒模型）</title>
+    <style>
+        #div0 {
+            display: flex;
+        }
+        
+        #div1 {
+            width: 200px;
+            height: 200px;
+            background: #ff0000;
+        }
+        
+        #div2 {
+            flex-grow: 1;
+            height: 200px;
+            background: #00ff00;
+        }
+        
+        #div3 {
+            width: 200px;
+            height: 200px;
+            background: #0000ff;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="div0">
+        <div id="div1"></div>
+        <div id="div2"></div>
+        <div id="div3"></div>
+    </div>
+</body>
+
+</html>
