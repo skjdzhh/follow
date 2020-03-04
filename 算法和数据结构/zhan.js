@@ -39,11 +39,10 @@ function Stack() {
     }
 
     //获取栈的大小
-    this.size = function() {
-        return items.length;
-    }
-
+    return items.length;
 }
+
+
 
 
 //十进制转二进制的方法
@@ -62,4 +61,17 @@ var divBy2 = function(num) {
 
     }
     return str;
+}
+
+
+//？？？数组转换[1,2,[3,[4,5]]]  ->  [1,2,3,4,5]
+var fn1 = function(arr) {
+    var arr1 = [];
+    // console.log(arr1);
+    for (var val in arr) {
+        if (val instanceof Array) { fn1(val); } else arr1.push(val);
+        // console.log("Hello" + val);
+
+    }
+    return arr1;
 }
